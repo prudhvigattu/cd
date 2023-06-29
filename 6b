@@ -78,24 +78,3 @@ followResult[m++]=c;
 }
 
 
-OUTPUT:
-
-Enter the no. of productions: 8
-Enter 8 productions
-Production with multiple terms should be give as separate productions
-E-ID
-D$ TFS
-FS
-Find FOLLOW of -->E FOLLOW (E) = < $ > >
-Do you want to continue (Press 1 to continue....>?1
-Find FOLLOW of ->D FOLLOW(D) = <> >
-Do you want to continue (Press 1 to continue....>?1
-Find FOLLOW of -->T
-FOLLOW <T> (+$>>
-Do you want Find FOLLOW
-to of continue (Press 1 to continue....>?S
->FOLLOW<S>=<> >
-Do you want to continue (Press 1 to continue....>?1
-Find FOLLOW of -->F
-FOLLOW<P>
-Do you want to continue (Press 1 to continue....>?
