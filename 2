@@ -1,0 +1,42 @@
+%{
+#include<stdio.h>
+%}
+DIGIT [0-9]
+DIGITS {DIGIT}+
+LETTER [A-Za-z]
+DELIM [ \t\n]
+WS {DELIM}+
+NUMBER {DIGITS}(\.{DIGITS})?(E[+-]?{DIGITS})?
+ID {LETTER}({LETTER}|{DIGIT})*
+%%
+{WS} { printf("\n WS special characters"); }
+{NUMBER} {printf("\n%s Number",yytext); }
+{ID} {printf("\n%s identifier",yytext);}
+>|<|"<="|">="|"="|"!=" {printf("\n%s Relational Operators",yytext); }
+"&&"|"||"|! { printf("\n%s Logical Operators",yytext); }
+"+"|"-"|"*"|"/"|"%" {printf("\n%s Arthmetic Operator",yytext); }
+%%
+int yywrap()
+{
+return 1;
+}
+int main()
+{
+printf("Enter any text: \n");
+yylex();
+return 0;
+}
+
+
+Output:
+
+$ lex lexical2.l
+$ cc lex.yy.c
+$ ./a.out
+Enter any text:
+a=b+10
+a identifier
+= Relational Operators
+b identifier
++ Arthmetic Operator
+10 Number
